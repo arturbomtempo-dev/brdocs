@@ -1,2 +1,2 @@
-export * from './onlyDigits.js';
-export * from './isRepeated.js';
+export * from './onlyDigits';
+export * from './isRepeated';
