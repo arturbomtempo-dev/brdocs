@@ -1,0 +1,64 @@
+{
+    "name": "brdocs",
+    "version": "1.0.0",
+    "description": "The modern TypeScript toolkit for Brazilian documents.",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "private": false,
+    "exports": {
+        ".": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "sideEffects": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "coverage": "vitest run --coverage",
+        "prepare": "npm run build",
+        "lint": "eslint .",
+        "watch": "tsc -w -p tsconfig.build.json",
+        "format": "prettier . --write"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/arturbomtempo-dev/brdocs.git"
+    },
+    "keywords": [
+        "cpf",
+        "cnpj",
+        "brazil",
+        "brazilian",
+        "documents",
+        "validator",
+        "formatter",
+        "typescript",
+        "javascript",
+        "brasil"
+    ],
+    "engines": {
+        "node": ">=18"
+    },
+    "author": "Artur Bomtempo Colen",
+    "license": "MIT",
+    "type": "module",
+    "bugs": {
+        "url": "https://github.com/arturbomtempo-dev/brdocs/issues"
+    },
+    "homepage": "https://github.com/arturbomtempo-dev/brdocs#readme",
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/node": "^25.9.3",
+        "@vitest/coverage-v8": "^4.1.9",
+        "eslint": "^10.5.0",
+        "prettier": "^3.8.4",
+        "typescript": "^6.0.3",
+        "typescript-eslint": "^8.61.0",
+        "vitest": "^4.1.9"
+    }
+}
