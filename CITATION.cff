@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: Please cite this software using these metadata.
-title: brdocs
+title: docsbr
 authors:
     - family-names: Bomtempo Colen
       given-names: Artur
@@ -15,7 +15,7 @@ keywords:
     - TypeScript
     - JavaScript
     - npm
-repository-code: https://github.com/arturbomtempo-dev/brdocs
+repository-code: https://github.com/arturbomtempo-dev/docsbr
 license: MIT
 version: 1.0.0
 date-released: 2026-06-15

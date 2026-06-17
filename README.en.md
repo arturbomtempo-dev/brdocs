@@ -1,15 +1,15 @@
-# brdocs
+# docsbr
 
 <table>
   <tr>
     <td width="800px">
       <div align="justify">
-        <b>brdocs</b> is a <b>TypeScript-first</b> library for validating, formatting, and generating Brazilian documents. Lightweight, dependency-free, and with native <b>ESM</b> support, it provides a minimal and consistent API for CPF, CNPJ, and other Brazilian documents. Compatible with <b>Node.js</b> ≥ 18, modern bundlers like Vite and esbuild, and the browser.
+        <b>docsbr</b> is a <b>TypeScript-first</b> library for validating, formatting, and generating Brazilian documents. Lightweight, dependency-free, and with native <b>ESM</b> support, it provides a minimal and consistent API for CPF, CNPJ, and other Brazilian documents. Compatible with <b>Node.js</b> ≥ 18, modern bundlers like Vite and esbuild, and the browser.
       </div>
     </td>
     <td>
       <div align="center">
-        <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/brdocs/logo-en.png" alt="brdocs" width="150px"/>
+        <img src="https://arturbomtempo-dev.github.io/arturbomtempo-cdn/assets/images/projects/docsbr/logo-en.png" alt="docsbr" width="150px"/>
       </div>
     </td>
   </tr>
@@ -18,7 +18,7 @@
 <br>
 
 <div align="center">
-  <a href="https://www.npmjs.com/package/brdocs"><img src="https://img.shields.io/badge/package-v1.0.0-CB3837?logo=npm&logoColor=white" alt="Package version"></a>
+  <a href="https://www.npmjs.com/package/docsbr"><img src="https://img.shields.io/badge/package-v1.0.0-CB3837?logo=npm&logoColor=white" alt="Package version"></a>
   <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
   <a href="https://vitest.dev/"><img src="https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white" alt="Vitest"></a>
   <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%E2%89%A518-339933?logo=nodedotjs&logoColor=white" alt="Node.js ≥18"></a>
@@ -50,7 +50,7 @@
 
 ## 📝 About
 
-Working with Brazilian documents like CPF and CNPJ usually requires manually implementing Mod-11 validation algorithms, formatting masks, and generation logic. **brdocs** centralizes all these operations into a clean, predictable API with no external dependencies.
+Working with Brazilian documents like CPF and CNPJ usually requires manually implementing Mod-11 validation algorithms, formatting masks, and generation logic. **docsbr** centralizes all these operations into a clean, predictable API with no external dependencies.
 
 Built with a focus on:
 
@@ -80,37 +80,37 @@ Built with a focus on:
 
 ## 📦 Installation
 
-Install brdocs using your preferred package manager.
+Install docsbr using your preferred package manager.
 
 ```bash
-npm install brdocs
+npm install docsbr
 ```
 
 ```bash
-yarn add brdocs
+yarn add docsbr
 ```
 
 ```bash
-pnpm add brdocs
+pnpm add docsbr
 ```
 
 ---
 
 ## 🔌 Importing
 
-brdocs exports the `cpf` and `cnpj` modules as namespaces. You can import from the main entry point or directly via subpath imports.
+docsbr exports the `cpf` and `cnpj` modules as namespaces. You can import from the main entry point or directly via subpath imports.
 
 ### Main entry point (recommended)
 
 ```typescript
-import { cpf, cnpj } from 'brdocs';
+import { cpf, cnpj } from 'docsbr';
 ```
 
 ### Subpath imports (tree-shaking)
 
 ```typescript
-import { format, unformat, isValid, generate } from 'brdocs/cpf';
-import { format, unformat, isValid, generate } from 'brdocs/cnpj';
+import { format, unformat, isValid, generate } from 'docsbr/cpf';
+import { format, unformat, isValid, generate } from 'docsbr/cnpj';
 ```
 
 ---
@@ -124,7 +124,7 @@ import { format, unformat, isValid, generate } from 'brdocs/cnpj';
 Applies the `###.###.###-##` mask to a CPF. Accepts formatted or unformatted input.
 
 ```typescript
-import { cpf } from 'brdocs';
+import { cpf } from 'docsbr';
 
 cpf.format('52998224725');     // '529.982.247-25'
 cpf.format('529.982.247-25'); // '529.982.247-25'
@@ -174,7 +174,7 @@ cpf.generate(true);  // e.g. '529.982.247-25'
 Applies the `##.###.###/####-##` mask to a CNPJ. Accepts formatted or unformatted input.
 
 ```typescript
-import { cnpj } from 'brdocs';
+import { cnpj } from 'docsbr';
 
 cnpj.format('11444777000161');      // '11.444.777/0001-61'
 cnpj.format('11.444.777/0001-61'); // '11.444.777/0001-61'
@@ -219,12 +219,12 @@ cnpj.generate(true);  // e.g. '11.444.777/0001-61'
 
 ## 💻 Usage Examples
 
-The full example code can be viewed at [`src/test.ts`](https://github.com/arturbomtempo-dev/brdocs/blob/main/src/test.ts).
+The full example code can be viewed at [`src/test.ts`](https://github.com/arturbomtempo-dev/docsbr/blob/main/src/test.ts).
 
 ### Using namespace import
 
 ```typescript
-import { cpf, cnpj } from 'brdocs';
+import { cpf, cnpj } from 'docsbr';
 
 // CPF
 console.log(cpf.format('52998224725'));       // '529.982.247-25'
@@ -246,7 +246,7 @@ console.log(cnpj.generate(true));                  // e.g. '11.444.777/0001-61'
 ### Using sub-path import
 
 ```typescript
-import { format, unformat, isValid, generate } from 'brdocs/cpf';
+import { format, unformat, isValid, generate } from 'docsbr/cpf';
 
 console.log(format('52998224725'));       // '529.982.247-25'
 console.log(unformat('529.982.247-25')); // '52998224725'
