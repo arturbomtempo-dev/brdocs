@@ -38,8 +38,8 @@
 - [Instalação](#-instalação)
 - [Importação](#-importação)
 - [Referência da API](#-referência-da-api)
-  - [CPF](#cpf)
-  - [CNPJ](#cnpj)
+    - [CPF](#cpf)
+    - [CNPJ](#cnpj)
 - [Exemplos de Uso](#-exemplos-de-uso)
 - [Testes](#-testes)
 - [Tecnologias](#-tecnologias)
@@ -124,7 +124,7 @@ Aplica a máscara `###.###.###-##` a um CPF. Aceita o valor com ou sem formataç
 ```typescript
 import { cpf } from 'brdocs';
 
-cpf.format('52998224725');     // '529.982.247-25'
+cpf.format('52998224725'); // '529.982.247-25'
 cpf.format('529.982.247-25'); // '529.982.247-25'
 ```
 
@@ -136,7 +136,7 @@ Remove a formatação e retorna apenas os dígitos.
 
 ```typescript
 cpf.unformat('529.982.247-25'); // '52998224725'
-cpf.unformat('52998224725');    // '52998224725'
+cpf.unformat('52998224725'); // '52998224725'
 ```
 
 ---
@@ -147,7 +147,7 @@ Valida um CPF pelo algoritmo Mod-11. Aceita o valor com ou sem formatação.
 
 ```typescript
 cpf.isValid('529.982.247-25'); // true
-cpf.isValid('52998224725');    // true
+cpf.isValid('52998224725'); // true
 cpf.isValid('111.111.111-11'); // false (sequência repetida)
 cpf.isValid('000.000.000-00'); // false
 ```
@@ -159,8 +159,8 @@ cpf.isValid('000.000.000-00'); // false
 Gera um CPF válido aleatório. Por padrão retorna apenas os dígitos; passe `true` para retornar formatado.
 
 ```typescript
-cpf.generate();      // ex: '52998224725'
-cpf.generate(true);  // ex: '529.982.247-25'
+cpf.generate(); // ex: '52998224725'
+cpf.generate(true); // ex: '529.982.247-25'
 ```
 
 ---
@@ -174,7 +174,7 @@ Aplica a máscara `##.###.###/####-##` a um CNPJ. Aceita o valor com ou sem form
 ```typescript
 import { cnpj } from 'brdocs';
 
-cnpj.format('11444777000161');      // '11.444.777/0001-61'
+cnpj.format('11444777000161'); // '11.444.777/0001-61'
 cnpj.format('11.444.777/0001-61'); // '11.444.777/0001-61'
 ```
 
@@ -186,7 +186,7 @@ Remove a formatação e retorna apenas os dígitos.
 
 ```typescript
 cnpj.unformat('11.444.777/0001-61'); // '11444777000161'
-cnpj.unformat('11444777000161');      // '11444777000161'
+cnpj.unformat('11444777000161'); // '11444777000161'
 ```
 
 ---
@@ -197,7 +197,7 @@ Valida um CNPJ pelo algoritmo Mod-11. Aceita o valor com ou sem formatação.
 
 ```typescript
 cnpj.isValid('11.444.777/0001-61'); // true
-cnpj.isValid('11444777000161');     // true
+cnpj.isValid('11444777000161'); // true
 cnpj.isValid('11.111.111/1111-11'); // false (sequência repetida)
 cnpj.isValid('00.000.000/0000-00'); // false
 ```
@@ -209,8 +209,8 @@ cnpj.isValid('00.000.000/0000-00'); // false
 Gera um CNPJ válido aleatório. Por padrão retorna apenas os dígitos; passe `true` para retornar formatado.
 
 ```typescript
-cnpj.generate();      // ex: '11444777000161'
-cnpj.generate(true);  // ex: '11.444.777/0001-61'
+cnpj.generate(); // ex: '11444777000161'
+cnpj.generate(true); // ex: '11.444.777/0001-61'
 ```
 
 ---
@@ -225,20 +225,20 @@ O código de exemplo completo pode ser visualizado em [`src/test.ts`](https://gi
 import { cpf, cnpj } from 'brdocs';
 
 // CPF
-console.log(cpf.format('52998224725'));       // '529.982.247-25'
+console.log(cpf.format('52998224725')); // '529.982.247-25'
 console.log(cpf.unformat('529.982.247-25')); // '52998224725'
-console.log(cpf.isValid('529.982.247-25'));  // true
-console.log(cpf.isValid('111.111.111-11'));  // false
-console.log(cpf.generate());                 // ex: '52998224725'
-console.log(cpf.generate(true));             // ex: '529.982.247-25'
+console.log(cpf.isValid('529.982.247-25')); // true
+console.log(cpf.isValid('111.111.111-11')); // false
+console.log(cpf.generate()); // ex: '52998224725'
+console.log(cpf.generate(true)); // ex: '529.982.247-25'
 
 // CNPJ
-console.log(cnpj.format('11444777000161'));       // '11.444.777/0001-61'
+console.log(cnpj.format('11444777000161')); // '11.444.777/0001-61'
 console.log(cnpj.unformat('11.444.777/0001-61')); // '11444777000161'
-console.log(cnpj.isValid('11.444.777/0001-61'));  // true
-console.log(cnpj.isValid('11.111.111/1111-11'));  // false
-console.log(cnpj.generate());                      // ex: '11444777000161'
-console.log(cnpj.generate(true));                  // ex: '11.444.777/0001-61'
+console.log(cnpj.isValid('11.444.777/0001-61')); // true
+console.log(cnpj.isValid('11.111.111/1111-11')); // false
+console.log(cnpj.generate()); // ex: '11444777000161'
+console.log(cnpj.generate(true)); // ex: '11.444.777/0001-61'
 ```
 
 ### Usando importação por sub-caminho
@@ -246,10 +246,10 @@ console.log(cnpj.generate(true));                  // ex: '11.444.777/0001-61'
 ```typescript
 import { format, unformat, isValid, generate } from 'brdocs/cpf';
 
-console.log(format('52998224725'));       // '529.982.247-25'
+console.log(format('52998224725')); // '529.982.247-25'
 console.log(unformat('529.982.247-25')); // '52998224725'
-console.log(isValid('529.982.247-25'));  // true
-console.log(generate(true));             // ex: '529.982.247-25'
+console.log(isValid('529.982.247-25')); // true
+console.log(generate(true)); // ex: '529.982.247-25'
 ```
 
 ---
