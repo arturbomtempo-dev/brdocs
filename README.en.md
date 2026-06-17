@@ -4,7 +4,7 @@
   <tr>
     <td width="800px">
       <div align="justify">
-        <b>brdocs</b> is a <b>TypeScript-first</b> library for validating, formatting, and generating Brazilian documents. Lightweight, dependency-free, and with native <b>ESM</b> support, it delivers an intuitive, robust, and consistent API for working with CPF, CNPJ, and other documents in the Brazilian ecosystem. Designed to be easy to use and straightforward to integrate into any modern project, whether on <b>Node.js</b>, bundlers like Vite and esbuild, or directly in the browser.
+        <b>brdocs</b> is a <b>TypeScript-first</b> library for validating, formatting, and generating Brazilian documents. Lightweight, dependency-free, and with native <b>ESM</b> support, it provides a minimal and consistent API for CPF, CNPJ, and other Brazilian documents. Compatible with <b>Node.js</b> ≥ 18, modern bundlers like Vite and esbuild, and the browser.
       </div>
     </td>
     <td>
@@ -19,9 +19,9 @@
 
 <div align="center">
   <a href="https://www.npmjs.com/package/brdocs"><img src="https://img.shields.io/badge/package-v1.0.0-CB3837?logo=npm&logoColor=white" alt="Package version"></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-6.0.3-3178C6?logo=typescript&logoColor=white" alt="TypeScript 6.0.3"></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white" alt="TypeScript"></a>
   <a href="https://vitest.dev/"><img src="https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white" alt="Vitest"></a>
-  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-22.13.1-339933?logo=nodedotjs&logoColor=white" alt="Node.js 22.13.1"></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%E2%89%A518-339933?logo=nodedotjs&logoColor=white" alt="Node.js ≥18"></a>
   <a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-22c55e" alt="MIT License"></a>
 </div>
 
@@ -67,18 +67,20 @@ Built with a focus on:
 - [x] **CPF**: validation, formatting, unformatting, and generation
 - [x] **CNPJ**: validation, formatting, unformatting, and generation
 
-### Coming soon
+### Roadmap
 
-- [ ] **CEP**: postal code lookup and validation
-- [ ] **PIX**: Pix key validation (CPF, CNPJ, email, phone, and random key)
-- [ ] **PIS/PASEP**: employee registration number validation
-- [ ] **CNH**: driver's license validation
-- [ ] **Título de Eleitor**: voter registration validation
-- [ ] **RENAVAM**: vehicle registration number validation
+- [ ] **CEP**: lookup and validation
+- [ ] **PIX**: Pix key validation
+- [ ] **PIS/PASEP**: validation
+- [ ] **CNH**: validation
+- [ ] **Título de Eleitor**: validation
+- [ ] **RENAVAM**: validation
 
 ---
 
 ## 📦 Installation
+
+Install brdocs using your preferred package manager.
 
 ```bash
 npm install brdocs
@@ -96,15 +98,15 @@ pnpm add brdocs
 
 ## 🔌 Importing
 
-brdocs exports the `cpf` and `cnpj` modules as namespaces. You can import from the main entry point or directly from each module's sub-path.
+brdocs exports the `cpf` and `cnpj` modules as namespaces. You can import from the main entry point or directly via subpath imports.
 
-### Main entry point
+### Main entry point (recommended)
 
 ```typescript
 import { cpf, cnpj } from 'brdocs';
 ```
 
-### Sub-paths (optimized tree-shaking)
+### Subpath imports (tree-shaking)
 
 ```typescript
 import { format, unformat, isValid, generate } from 'brdocs/cpf';
