@@ -1,5 +1,5 @@
 {
-    "name": "brdocs",
+    "name": "brdoc",
     "version": "1.0.0",
     "description": "The modern TypeScript toolkit for Brazilian documents.",
     "main": "./dist/index.js",
